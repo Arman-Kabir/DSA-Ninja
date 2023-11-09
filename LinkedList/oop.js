@@ -16,4 +16,4 @@ class Person {
 const samim = new Person(2, 2);
 const samima = new Person(2, 3);
 
-console.log(samima);
+console.log(samima.walk());
