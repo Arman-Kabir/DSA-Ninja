@@ -31,16 +31,55 @@ class LinkedList {
 
     // adding node at the beginning
     // time com --> O(1)
-    unshift(value){
+    unshift(value) {
         const newNode = new Node(value);
-        if(!this.head){
+        if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
-        }else{
+        } else {
             newNode.next = this.head;
             this.head = newNode;
         }
         this.length += 1;
+    }
+
+    // remove from beginning
+    // 
+    shift() {
+        if (!this.head) return null;
+        const temp = this.head;
+        this.head = this.head.next;
+        temp.next = null;
+        this.length--;
+        if (this.length === 0) {
+            this.tail = null;
+        }
+        return temp;
+    }
+
+    // remove from the end of the list
+// time complexity --> O(n)
+    pop() {
+
+        if (!this.head) return null;
+
+        let temp = this.head;
+        let pre = this.head;
+        while (temp.next) {
+            pre = temp;
+            temp = temp.next;
+        }
+
+        this.tail = pre;
+        this.tail.next = null;
+        this.length--;
+
+        if (this.length === 0) {
+            this.head = null;
+            this.tail = null;
+        }
+
+        return temp;
     }
 }
 
