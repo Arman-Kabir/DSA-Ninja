@@ -1,4 +1,5 @@
-/*
+/* #https://www.youtube.com/watch?v=5Boqfjissv0
+
     prerequisite:
     Iteration/Loops
     Functions
@@ -13,10 +14,11 @@
     *We don't use the same variable like iteration in recursion.
 */
 
-function printNumb(n) {
-    if (n == 0) return;
-    console.log(n);
-    printNumb(n - 1);
-}
+// function printNumb(n) {
+//     if (n == 0) return;
+//     console.log(n);
+//     printNumb(n - 1);
+// }
+// printNumb(5);
 
-printNumb(5);
+ 
