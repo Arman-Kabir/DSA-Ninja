@@ -29,6 +29,13 @@ class Graph {
         this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
             v => v !== vertex1
         );
+    };
+    removeVertex(vertex){
+        while(this.adjacencyList[vertex].length){
+            const adjacentVertex = this.adjacencyList[vertex].pop();
+            this.removeEdge(vertex,adjacentVertex);
+        }
+        delete this.adjacencyList[vertex];
     }
 
 }
@@ -41,6 +48,13 @@ g.addVertex('los angeles');
 g.addVertex('hong kong');
 g.addEdge('tokyo', 'dallas');
 g.addEdge('dallas', 'aspen');
-g.removeEdge('tokyo','dallas');
-g.removeEdge('dallas','aspen');
+g.addEdge('hong kong', 'tokyo');
+g.addEdge('hong kong', 'dallas');
+g.addEdge('los angeles', 'hong kong');
+g.addEdge('los angeles', 'aspen');
+
+g.removeVertex('hong kong');
+// g.removeEdge('tokyo','dallas');
+// g.removeEdge('dallas','aspen');
+
 console.log(g);
