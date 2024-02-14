@@ -17,6 +17,8 @@
 
     #3
 
-    
+    #8
+    BREADTH FIRST :  visit neighbors at current depth first. 
+    Breadth first priotizes visiting all of the neighbors at a given depth before moving downwards or visiting neighbors of neighbors. 
 
 */
