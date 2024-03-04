@@ -21,15 +21,26 @@
 // }
 // printNumb(5);
 
-function printSum(i, n, sum) {
-    if (i == n) {
-        sum += i;
-        console.log(sum);
-        return;
-    };
-    sum += i;
-    printSum(i+1,n,sum);
-    console.log(i);
+// function printSum(i, n, sum) {
+//     if (i == n) {
+//         sum += i;
+//         console.log(sum);
+//         return;
+//     };
+//     sum += i;
+//     printSum(i+1,n,sum);
+//     console.log(i);
+// };
+// console.log(printSum(1,5,0));
+
+function calcFactorial(n) {
+    if (n == 1 || n == 0) {
+        return 1;
+    }
+    let fact_nm1 = calcFactorial(n - 1);
+    let fact_n = n * fact_nm1;
+    return fact_n;
 };
-console.log(printSum(1,5,0));
+
+console.log(calcFactorial(5));   
 
